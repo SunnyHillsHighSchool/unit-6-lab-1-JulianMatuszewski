@@ -375,15 +375,33 @@ public void decreaseBlue(double amount)
    //create a pixel object
    Pixel p  = null;
    //loop through all of the pixels
-   for(int x=0;x<pixelArray.length;x++)
+   for(int x = 0; x < pixelArray.length; x++)
    {
    //get the current pixel
-   p =pixelArray[x];
+   p = pixelArray[x];
     //decrease the blue value
     p.setBlue((int)(p.getBlue()*amount));
    }
    }
-   
+
+//precondition: amount is between 0 and 1
+//Modify RGB values
+//By: Julian Matuszewski
+//AP Computer Science, Period 2
+public void decreaseRGB(double r, double g, double b)
+{
+  //for-each loop using new Pixel Object p
+  for (Pixel p: this.getPixels())
+  {
+    //using i to iterate for each index:
+    //set red value to getRed*r
+    p.setRed((int)(p.getRed()*r));
+    //set green value to getGreen*g
+    p.setGreen((int)(p.getGreen()*g));
+    //set blue value to getBlue*b
+    p.setBlue((int)(p.getBlue()*b));
+  }
+}
 /*
 The copper-puzzle.png image is a puzzle -- it shows something famous, however the image has been distored. The true image is in the blue and green values, however all the blue and green values have all be divided by 20, so the values are very small. The red values are all just random numbers, noise added on top to obscure things. Undo these distortions to reveal the true image.
 
