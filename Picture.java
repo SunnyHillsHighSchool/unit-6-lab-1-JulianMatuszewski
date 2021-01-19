@@ -393,7 +393,6 @@ public void decreaseRGB(double r, double g, double b)
   //for-each loop using new Pixel Object p
   for (Pixel p: this.getPixels())
   {
-    //using i to iterate for each index:
     //set red value to getRed*r
     p.setRed((int)(p.getRed()*r));
     //set green value to getGreen*g
